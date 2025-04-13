@@ -47,11 +47,7 @@ function App() {
 
     try {
       setLoading(true);
-      const res = await axios.post("http://localhost:5000/upload", formData, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      });
+      const res = await axios.post(`${process.env.REACT_APP_API_URL}/upload`,formData);
       setTranscription(res.data.transcription);
       setSummary({
         mainTopics: res.data.summary.mainTopics || [],
