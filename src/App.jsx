@@ -47,6 +47,7 @@ function App() {
 
     try {
       setLoading(true);
+      console.log(process.env.REACT_APP_API_URL);
       const res = await axios.post(`${process.env.REACT_APP_API_URL}/upload`,formData);
       setTranscription(res.data.transcription);
       setSummary({
