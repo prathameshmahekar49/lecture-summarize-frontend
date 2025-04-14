@@ -48,7 +48,7 @@ function App() {
     try {
       setLoading(true);
       console.log("API URL is:", process.env.REACT_APP_API_URL);
-      const res = await axios.post(`https://lecture-summarizer-backend.onrender.com/upload/`,formData);
+      const res = await axios.post(`https://lecture-summarizer-backend.onrender.com/upload`,formData);
       setTranscription(res.data.transcription);
       setSummary({
         mainTopics: res.data.summary.mainTopics || [],
